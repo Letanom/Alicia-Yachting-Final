@@ -6,6 +6,7 @@ import About from './components/About';
 import YachtShowcase from './components/YachtShowcase';
 import Stats from './components/Stats';
 import Gallery from './components/Gallery';
+import ForSale from './components/ForSale';
 import Testimonials from './components/Testimonials';
 import BookingCTA from './components/BookingCTA';
 import Contact from './components/Contact';
@@ -26,6 +27,7 @@ function App() {
         <YachtShowcase />
         <Stats />
         <Gallery />
+        <ForSale />
         <Testimonials />
         <BookingCTA />
         <Contact />

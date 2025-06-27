@@ -1,5 +1,5 @@
 import React from 'react';
-import { Anchor, Users, Bed, Calendar, Euro, Phone, Mail } from 'lucide-react';
+import { Anchor, Users, Bed, Calendar, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import guletImage from '../gulet.jpg';
 import nightGulet from '../night_gulet.jpg';
@@ -12,7 +12,7 @@ const YachtShowcase: React.FC = () => {
     {
       icon: <Anchor className="w-6 h-6" />,
       label: language === 'tr' ? 'Uzunluk' : 'Length',
-      value: '32m'
+      value: '24m'
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -22,22 +22,25 @@ const YachtShowcase: React.FC = () => {
     {
       icon: <Bed className="w-6 h-6" />,
       label: language === 'tr' ? 'Kabin' : 'Cabins',
-      value: '6 ' + (language === 'tr' ? 'Kabin' : 'Cabins')
+      value: '3 ' + (language === 'tr' ? 'Kabin' : 'Cabins')
     },
     {
       icon: <Calendar className="w-6 h-6" />,
       label: language === 'tr' ? 'Yapım Yılı' : 'Built Year',
-      value: '2018'
+      value: '2002/2024'
+    },
+    {
+      icon: <Anchor className="w-6 h-6" />,
+      label: language === 'tr' ? 'Genişlik' : 'Beam',
+      value: '6.30m'
     }
   ];
 
   const features = [
     language === 'tr' ? 'Tam Klimalı' : 'Full Air Conditioning',
     language === 'tr' ? 'WiFi & Ses Sistemi' : 'WiFi & Sound System',
-    language === 'tr' ? 'Su Sporları Ekipmanları' : 'Water Sports Equipment',
     language === 'tr' ? 'Profesyonel Mürettebat' : 'Professional Crew',
-    language === 'tr' ? 'Güneş Güvertesi' : 'Sun Deck',
-    language === 'tr' ? 'Jakuzi' : 'Jacuzzi'
+    language === 'tr' ? 'Güneş Güvertesi' : 'Sun Deck'
   ];
 
   return (
@@ -77,14 +80,10 @@ const YachtShowcase: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                 Alicia Gulet
               </h2>
-              <div className="flex items-center space-x-2 mb-6">
-                <Euro className="w-8 h-8 text-green-600" />
-                <span className="text-3xl font-bold text-green-600">€1,000,000</span>
-              </div>
               <p className="text-lg text-gray-600 leading-relaxed">
                 {language === 'tr' 
-                  ? 'Geleneksel Türk gulet tasarımı ile modern lüksün mükemmel birleşimi. Akdeniz\'in en güzel sularında unutulmaz deneyimler yaşamak için tasarlanmış.'
-                  : 'Perfect combination of traditional Turkish gulet design with modern luxury. Designed to create unforgettable experiences in the most beautiful waters of the Mediterranean.'
+                  ? 'Geleneksel Türk gulet tasarımı ile modern lüksün mükemmel birleşimi. Ege\'nin en güzel sularında unutulmaz deneyimler yaşamak için tasarlanmış.'
+                  : 'Perfect combination of traditional Turkish gulet design with modern luxury. Designed to create unforgettable experiences in the most beautiful waters of the Aegean.'
                 }
               </p>
             </div>

@@ -8,14 +8,15 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const translations = {
+const translations: Record<string, Record<string, string>> = {
   tr: {
     // Navigation
     'nav.home': 'Ana Sayfa',
     'nav.about': 'Hakkımızda',     
-    'nav.yacht': 'Yatımız',
+    'nav.yacht': 'Yatlarımız',
     'nav.gallery': 'Galeri',
     'nav.contact': 'İletişim',
+    'nav.forSale': 'Satılık',
     
     // Header
     'header.call': 'Arayın',
@@ -46,14 +47,27 @@ const translations = {
     // Footer
     'footer.description': 'Yat dünyasında profesyonel hizmetlerin adresi.',
     'footer.rights': 'Tüm hakları saklıdır.',
+    
+    // For Sale Section
+    'forSale.title': 'Satılık Yatlar',
+    'forSale.subtitle': 'Hayalinizdeki yatı bulun',
+    'forSale.motorYacht': 'Motor Yat',
+    'forSale.gulet': 'Gulet',
+    'forSale.speedboat': 'Sürat Teknesi',
+    'forSale.catamaran': 'Katamaran',
+    'forSale.all': 'Tümünü Göster',
+    'forSale.filter': 'Filtrele',
+    'forSale.guletDetailsTitle': 'Alicia Gulet',
+    'forSale.guletDetailsDesc': 'Geleneksel Türk gulet tasarımı ile modern lüksün mükemmel birleşimi. Ege\'nin en güzel sularında unutulmaz deneyimler yaşamak için tasarlanmış. Uzunluk: 24m, Kapasite: 12, Kabin: 3, Yapım Yılı: 2002/2024, Genişlik: 6.30m',
   },
   en: {
     // Navigation  
     'nav.home': 'Home',
     'nav.about': 'About',
-    'nav.yacht': 'Our Yacht',
+    'nav.yacht': 'Our Yachts',
     'nav.gallery': 'Gallery',
     'nav.contact': 'Contact',
+    'nav.forSale': 'For Sale',
     
     // Header
     'header.call': 'Call',
@@ -84,6 +98,18 @@ const translations = {
     // Footer
     'footer.description': 'Your destination for professional yacht services.',
     'footer.rights': 'All rights reserved.',
+    
+    // For Sale Section
+    'forSale.title': 'Yachts for Sale',
+    'forSale.subtitle': 'Find your dream yacht',
+    'forSale.motorYacht': 'Motor Yacht',
+    'forSale.gulet': 'Gulet',
+    'forSale.speedboat': 'Speedboat',
+    'forSale.catamaran': 'Catamaran',
+    'forSale.all': 'Show All',
+    'forSale.filter': 'Filter',
+    'forSale.guletDetailsTitle': 'Alicia Gulet',
+    'forSale.guletDetailsDesc': 'Perfect combination of traditional Turkish gulet design with modern luxury. Designed to create unforgettable experiences in the most beautiful waters of the Aegean. Length: 24m, Capacity: 12, Cabins: 3, Built Year: 2002/2024, Beam: 6.30m',
   }
 };
 
