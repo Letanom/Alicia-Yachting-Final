@@ -93,7 +93,7 @@ const ForSale: React.FC = () => {
                         ))}
                       </div>
                       <p className="text-gray-700 text-sm mb-4">{gulet.desc}</p>
-                      <a href="tel:+905374599544" className="mt-2 inline-block px-5 py-2 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition">İletişime Geç</a>
+                      <a href="tel:+905374599544" className="mt-2 inline-block px-5 py-2 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition">{t('forSale.contactButton')}</a>
                     </div>
                   </div>
                 ))}
