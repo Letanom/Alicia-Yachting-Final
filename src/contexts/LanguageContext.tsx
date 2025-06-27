@@ -58,7 +58,7 @@ const translations: Record<string, Record<string, string>> = {
     'forSale.all': 'Tümünü Göster',
     'forSale.filter': 'Filtrele',
     'forSale.guletDetailsTitle': 'Alicia Gulet',
-    'forSale.guletDetailsDesc': 'Geleneksel Türk gulet tasarımı ile modern lüksün mükemmel birleşimi. Ege\'nin en güzel sularında unutulmaz deneyimler yaşamak için tasarlanmış. Uzunluk: 24m, Kapasite: 12, Kabin: 3, Yapım Yılı: 2002/2024, Genişlik: 6.30m',
+    'forSale.guletDetailsDesc': 'Bodrum guleti, Ege Bölgesi\'ne özgü, geleneksel tarzda ahşap bir yelkenli teknedir. El işçiliğiyle yapılan bu tekneler, mavi yolculuklar için konforlu ve estetik bir deneyim sunar. Günümüzde hem turizmde hem kültürel miras olarak önemli bir yer tutar.',
   },
   en: {
     // Navigation  
@@ -109,7 +109,7 @@ const translations: Record<string, Record<string, string>> = {
     'forSale.all': 'Show All',
     'forSale.filter': 'Filter',
     'forSale.guletDetailsTitle': 'Alicia Gulet',
-    'forSale.guletDetailsDesc': 'Perfect combination of traditional Turkish gulet design with modern luxury. Designed to create unforgettable experiences in the most beautiful waters of the Aegean. Length: 24m, Capacity: 12, Cabins: 3, Built Year: 2002/2024, Beam: 6.30m',
+    'forSale.guletDetailsDesc': 'The Bodrum gulet is a traditional wooden sailing yacht unique to the Aegean region. Handcrafted, these boats offer a comfortable and aesthetic experience for blue cruises. Today, they hold an important place both in tourism and as a cultural heritage.',
   }
 };
 

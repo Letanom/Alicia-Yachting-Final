@@ -6,7 +6,7 @@ import nightGulet from '../night_gulet.jpg';
 import icDizayn from '../ic_dizayn.jpg';
 
 const YachtShowcase: React.FC = () => {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
 
   const specifications = [
     {
@@ -81,10 +81,7 @@ const YachtShowcase: React.FC = () => {
                 Alicia Gulet
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                {language === 'tr' 
-                  ? 'Geleneksel Türk gulet tasarımı ile modern lüksün mükemmel birleşimi. Ege\'nin en güzel sularında unutulmaz deneyimler yaşamak için tasarlanmış.'
-                  : 'Perfect combination of traditional Turkish gulet design with modern luxury. Designed to create unforgettable experiences in the most beautiful waters of the Aegean.'
-                }
+                {t('forSale.guletDetailsDesc')}
               </p>
             </div>
 

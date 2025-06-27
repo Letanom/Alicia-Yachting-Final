@@ -27,10 +27,7 @@ const ForSale: React.FC = () => {
   const gulets = [
     {
       title: t('forSale.guletDetailsTitle'),
-      desc:
-        language === 'tr'
-          ? "Geleneksel Türk gulet tasarımı ile modern lüksün mükemmel birleşimi. Ege'nin en güzel sularında unutulmaz deneyimler yaşamak için tasarlanmış."
-          : 'Perfect combination of traditional Turkish gulet design with modern luxury. Designed to create unforgettable experiences in the most beautiful waters of the Aegean.',
+      desc: t('forSale.guletDetailsDesc'),
       image: guletImage,
       specs: guletSpecs,
       price: '€1,000,000',
