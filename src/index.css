@@ -46,6 +46,17 @@
   100% { transform: translateX(100%); }
 }
 
+/* Slider movement animations */
+@keyframes slide-horizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes slide-horizontal-reverse {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out;
 }
@@ -68,6 +79,15 @@
 
 .animate-shimmer {
   animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Slider movement classes */
+.animate-slide-horizontal {
+  animation: slide-horizontal 3s ease-in-out infinite;
+}
+
+.animate-slide-horizontal-reverse {
+  animation: slide-horizontal-reverse 3s ease-in-out infinite;
 }
 
 /* Smooth scrolling */

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChevronDown, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import heroImage from '../hero.jpeg';
 
 const Hero: React.FC = () => {
   const { language } = useLanguage();
@@ -15,13 +14,18 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src={heroImage}
-          alt="Alicia Yachting"
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video 
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/slider.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       
       {/* Overlay */}
@@ -51,7 +55,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="tel:+902425550123"
-              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg animate-slide-horizontal"
             >
               <Phone className="mr-2 w-5 h-5" />
               {language === 'tr' ? 'Hemen Arayın' : 'Call Now'}
@@ -59,7 +63,7 @@ const Hero: React.FC = () => {
             
             <a
               href="mailto:info@aliciayachting.com"
-              className="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20"
+              className="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20 animate-slide-horizontal-reverse"
             >
               <Mail className="mr-2 w-5 h-5" />
               {language === 'tr' ? 'Bilgi Al' : 'Get Info'}
