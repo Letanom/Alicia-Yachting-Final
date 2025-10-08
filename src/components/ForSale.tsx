@@ -93,7 +93,20 @@ const ForSale: React.FC = () => {
                         ))}
                       </div>
                       <p className="text-gray-700 text-sm mb-4">{gulet.desc}</p>
-                      <a href="tel:+905374599544" className="mt-2 inline-block px-5 py-2 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition">{t('forSale.contactButton')}</a>
+                      <div className="flex flex-wrap gap-2">
+                        <a href="tel:+905374599544" className="px-5 py-2 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition">{t('forSale.contactButton')}</a>
+                        <button 
+                          onClick={() => {
+                            const yachtSection = document.querySelector('#yacht');
+                            if (yachtSection) {
+                              yachtSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }}
+                          className="px-5 py-2 bg-white text-blue-700 border border-blue-700 rounded-full font-medium hover:bg-blue-50 transition"
+                        >
+                          {language === 'tr' ? 'İncele' : 'View'}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}

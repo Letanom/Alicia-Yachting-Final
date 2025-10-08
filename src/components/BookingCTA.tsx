@@ -107,7 +107,7 @@ const BookingCTA: React.FC = () => {
                 {/* Fiyat kaldırıldı */}
               </div>
               <ul className="space-y-2 text-blue-100">
-                <li>• 32m {language === 'tr' ? 'uzunluk, 12 kişi kapasiteli' : 'length, 12 guest capacity'}</li>
+                <li>• 24m {language === 'tr' ? 'uzunluk, 12 kişi kapasiteli' : 'length, 12 guest capacity'}</li>
                 <li>• 6 {language === 'tr' ? 'lüks kabin' : 'luxury cabins'}</li>
                 <li>• {language === 'tr' ? 'Profesyonel mürettebat dahil' : 'Professional crew included'}</li>
               </ul>

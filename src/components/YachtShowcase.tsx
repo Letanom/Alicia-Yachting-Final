@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Anchor, Users, Bed, Calendar, Phone, Mail, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Anchor, Users, Bed, Calendar, Phone, Mail, ChevronLeft, ChevronRight, X, Music, Tv, Wind, Wrench, Zap, Fuel, Droplets, Gauge } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import guletImage from '../gulet.jpg';
 import nightGulet from '../night_gulet.jpg';
@@ -185,6 +185,122 @@ const YachtShowcase: React.FC = () => {
     language === 'tr' ? 'Güneş Güvertesi' : 'Sun Deck'
   ];
 
+  // Accommodation data
+  const accommodationData = {
+    title: language === 'tr' ? 'Konaklama' : 'Accommodation',
+    cabins: {
+      title: language === 'tr' ? 'Kabinler' : 'Cabins',
+      master: '1 Master',
+      twin: '1 Twin',
+      double: '1 Double'
+    },
+    tvSystem: {
+      title: language === 'tr' ? 'TV Sistemi' : 'TV System',
+      location: language === 'tr' ? 'Salonda ve Master Kabinde' : 'In Salon and Master Cabin'
+    },
+    guests: {
+      title: language === 'tr' ? 'Misafirler' : 'Guests',
+      capacity: language === 'tr' ? '6-12 (Konaklama 6-Günlük 12)' : '6-12 (Stay Over 6-Daily 12)'
+    },
+    musicSystem: {
+      title: language === 'tr' ? 'Müzik Sistemi' : 'Music System',
+      location: language === 'tr' ? 'Salonda ve Güverte Hoparlörlerinde' : 'In Salon and Deck Speakers'
+    },
+    crew: {
+      title: language === 'tr' ? 'Ekip' : 'Crew',
+      count: '2'
+    },
+    tender: {
+      title: language === 'tr' ? 'Tender' : 'Tender',
+      description: language === 'tr' 
+        ? '50 HP Dıştan Takma Motorlu 4.20 m tender' 
+        : '4.20 m tender with 50 HP Outboard Engine'
+    },
+    ac: {
+      title: language === 'tr' ? 'Klima' : 'Air Conditioning',
+      description: language === 'tr' 
+        ? 'Evet (Gece kullanımı 2 saat)' 
+        : 'Yes (A/C use during night 2 hours)'
+    }
+  };
+
+  // Specifications data
+  const fullSpecificationsData = {
+    title: language === 'tr' ? 'Teknik Özellikler' : 'Specifications',
+    builtRefit: {
+      title: language === 'tr' ? 'İnşa/Yenileme' : 'Built/Refit',
+      value: '2002/2024'
+    },
+    builder: {
+      title: language === 'tr' ? 'İnşaatçı' : 'Builder',
+      value: 'Ethemoğlu Boatyard & Design'
+    },
+    basePort: {
+      title: language === 'tr' ? 'Ana Liman' : 'Base Port',
+      value: 'Bodrum'
+    },
+    length: {
+      title: language === 'tr' ? 'Uzunluk' : 'Length',
+      value: '24 m / 72 ft'
+    },
+    beam: {
+      title: language === 'tr' ? 'Genişlik' : 'Beam',
+      value: '6.30 m / 20.66 ft'
+    },
+    draft: {
+      title: language === 'tr' ? 'Taskelek' : 'Draft',
+      value: '2.18 m / 7.15 ft'
+    },
+    speed: {
+      title: language === 'tr' ? 'Hız' : 'Speed',
+      value: '8.5 –10 Knots'
+    },
+    mainEngine: {
+      title: language === 'tr' ? 'Ana Motor' : 'Main Engine',
+      value: '1x MAN MARINE DIESEL 440 HP'
+    },
+    fuelConsumption: {
+      title: language === 'tr' ? 'Yakıt Tüketimi' : 'Fuel Consumption',
+      value: language === 'tr' ? '70 lt–80 lt seyir halinde' : '70 lt–80 lt at cruising'
+    },
+    generator: {
+      title: language === 'tr' ? 'Jeneratör' : 'Generator',
+      value: '1x Onan Cummins 13.5 kW'
+    },
+    fuelCapacity: {
+      title: language === 'tr' ? 'Yakıt Kapasitesi' : 'Fuel Capacity',
+      value: '3.000 lt'
+    },
+    waterCapacity: {
+      title: language === 'tr' ? 'Su Kapasitesi' : 'Water Capacity',
+      value: '3.000 lt'
+    }
+  };
+
+  const accommodationFeatures = [
+    { icon: <Bed className="w-5 h-5" />, title: accommodationData.cabins.title, value: `${accommodationData.cabins.master} - ${accommodationData.cabins.twin} - ${accommodationData.cabins.double}` },
+    { icon: <Users className="w-5 h-5" />, title: accommodationData.guests.title, value: accommodationData.guests.capacity },
+    { icon: <Tv className="w-5 h-5" />, title: accommodationData.tvSystem.title, value: accommodationData.tvSystem.location },
+    { icon: <Music className="w-5 h-5" />, title: accommodationData.musicSystem.title, value: accommodationData.musicSystem.location },
+    { icon: <Anchor className="w-5 h-5" />, title: accommodationData.crew.title, value: accommodationData.crew.count },
+    { icon: <Wind className="w-5 h-5" />, title: accommodationData.ac.title, value: accommodationData.ac.description }
+  ];
+
+  const technicalSpecs = [
+    { icon: <Wrench className="w-5 h-5" />, title: fullSpecificationsData.builtRefit.title, value: fullSpecificationsData.builtRefit.value },
+    { icon: <Anchor className="w-5 h-5" />, title: fullSpecificationsData.builder.title, value: fullSpecificationsData.builder.value },
+    { icon: <Droplets className="w-5 h-5" />, title: fullSpecificationsData.basePort.title, value: fullSpecificationsData.basePort.value },
+    { icon: <Gauge className="w-5 h-5" />, title: fullSpecificationsData.length.title, value: fullSpecificationsData.length.value },
+    { icon: <Gauge className="w-5 h-5" />, title: fullSpecificationsData.beam.title, value: fullSpecificationsData.beam.value },
+    { icon: <Gauge className="w-5 h-5" />, title: fullSpecificationsData.draft.title, value: fullSpecificationsData.draft.value },
+    { icon: <Gauge className="w-5 h-5" />, title: fullSpecificationsData.speed.title, value: fullSpecificationsData.speed.value },
+    { icon: <Zap className="w-5 h-5" />, title: fullSpecificationsData.mainEngine.title, value: fullSpecificationsData.mainEngine.value },
+    { icon: <Fuel className="w-5 h-5" />, title: fullSpecificationsData.fuelConsumption.title, value: fullSpecificationsData.fuelConsumption.value },
+    { icon: <Zap className="w-5 h-5" />, title: fullSpecificationsData.generator.title, value: fullSpecificationsData.generator.value },
+    { icon: <Fuel className="w-5 h-5" />, title: fullSpecificationsData.fuelCapacity.title, value: fullSpecificationsData.fuelCapacity.value },
+    { icon: <Droplets className="w-5 h-5" />, title: fullSpecificationsData.waterCapacity.title, value: fullSpecificationsData.waterCapacity.value }
+  ];
+
   return (
     <section id="yacht" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -304,6 +420,92 @@ const YachtShowcase: React.FC = () => {
                 {language === 'tr' ? 'Bilgi Al' : 'Get Info'}
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Accommodation and Specifications Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {language === 'tr' ? 'Yat Detayları' : 'Yacht Details'}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              {language === 'tr' 
+                ? 'Alicia Gulet\'in konforlu konaklama alanları ve teknik özellikleri' 
+                : 'Comfortable accommodation areas and technical specifications of the Alicia Gulet'
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Accommodation Section */}
+            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="p-6 bg-gradient-to-r from-blue-600 to-indigo-700">
+                <h3 className="text-2xl font-bold text-white flex items-center">
+                  <Bed className="w-6 h-6 mr-3" />
+                  {accommodationData.title}
+                </h3>
+              </div>
+              
+              <div className="p-6 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {accommodationFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                      <div className="p-2 bg-blue-100 rounded-lg mr-4 text-blue-600">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">{feature.title}</h4>
+                        <p className="text-gray-600 mt-1">{feature.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
+                  <h4 className="font-semibold text-gray-900 flex items-center">
+                    <Anchor className="w-5 h-5 mr-2 text-blue-600" />
+                    {accommodationData.tender.title}
+                  </h4>
+                  <p className="text-gray-700 mt-2">{accommodationData.tender.description}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Specifications Section */}
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-700">
+                <h3 className="text-2xl font-bold text-white flex items-center">
+                  <Wrench className="w-6 h-6 mr-3" />
+                  {fullSpecificationsData.title}
+                </h3>
+              </div>
+              
+              <div className="p-6">
+                <div className="space-y-4">
+                  {technicalSpecs.map((spec, index) => (
+                    <div key={index} className="flex items-center p-4 bg-white hover:bg-gray-50 rounded-lg transition-colors shadow-sm">
+                      <div className="p-2 bg-indigo-100 rounded-lg mr-4 text-indigo-600">
+                        {spec.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-900">{spec.title}</h4>
+                        <p className="text-gray-600 mt-1">{spec.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-gray-500">
+              {language === 'tr' 
+                ? 'Tüm teknik detaylar ve donanım bilgileri 2024 yenileme sonrası güncellenmiştir' 
+                : 'All technical details and equipment information have been updated after the 2024 refit'
+              }
+            </p>
           </div>
         </div>
       </div>

@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronDown, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import sliderVideo from '../slider.mov';
 
 const Hero: React.FC = () => {
-  const { t, language } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const heroImages = [
-    'https://images.pexels.com/photos/1876465/pexels-photo-1876465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop',
-    'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop',
-    'https://images.pexels.com/photos/2070485/pexels-photo-2070485.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop'
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+  const { language } = useLanguage();
 
   const scrollToNext = () => {
     const aboutSection = document.querySelector('#about');
@@ -28,17 +15,18 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Slideshow */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        {heroImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ backgroundImage: `url('${image}')` }}
-          />
-        ))}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={sliderVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       
       {/* Overlay */}
@@ -83,19 +71,6 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {heroImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-white' : 'bg-white/40'
-            }`}
-          />
-        ))}
       </div>
 
       {/* Scroll Indicator */}

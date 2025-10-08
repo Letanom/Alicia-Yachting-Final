@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Languages, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import logo from '../logo.jpeg';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +20,6 @@ const Header: React.FC = () => {
     { key: 'nav.about', href: '#about' },
     { key: 'nav.yacht', href: '#yacht' },
     { key: 'nav.forSale', href: '#for-sale' },
-    { key: 'nav.gallery', href: '#gallery' },
     { key: 'nav.contact', href: '#contact' },
   ];
 
@@ -41,8 +39,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="Alicia Yachting Logo" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow" />
-            <span className={`text-2xl font-bold ${isScrolled ? 'text-blue-900' : 'text-white'}`}>
+            <span className={`text-2xl font-handwritten font-bold ${isScrolled ? 'text-blue-900' : 'text-white'}`} style={{ fontSize: '1.8rem' }}>
               Alicia Yachting
             </span>
           </div>
