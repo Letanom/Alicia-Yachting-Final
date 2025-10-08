@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import sliderVideo from '../slider.mov';
+import heroImage from '../hero.jpeg';
 
 const Hero: React.FC = () => {
   const { language } = useLanguage();
@@ -15,18 +15,13 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
+        <img 
+          src={heroImage}
+          alt="Alicia Yachting"
           className="w-full h-full object-cover"
-        >
-          <source src={sliderVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
       </div>
       
       {/* Overlay */}
